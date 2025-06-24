@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
-    tools:context=".Activities.LoginActivity">
+    tools:context=".Activities.RegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/s10"
-                    android:text="Login"
+                    android:text="Registration"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView"/>
@@ -60,6 +59,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtTitle_login" />
+
+
 
                 <EditText
                     android:id="@+id/editText_Mobile"
@@ -92,6 +93,69 @@
 
 
                 <EditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/s30"
+                    android:hint="Name"
+                    android:maxLines="1"
+                    android:drawablePadding="@dimen/A10"
+                    android:drawableLeft="@drawable/ic_baseline_person"
+                    android:inputType="textPassword"
+                    android:layout_marginStart="@dimen/s20"
+                    android:layout_marginEnd="@dimen/s20"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText_Mobile"
+                    style="@style/editText"/>
+
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    style="@style/hintTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="Name *"
+                    android:textColor="#757575"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextName"
+                    app:layout_constraintStart_toStartOf="@+id/editTextName"
+                    app:layout_constraintTop_toTopOf="@+id/editTextName" />
+
+
+                <EditText
+                    android:id="@+id/editTextMobile"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/s30"
+                    android:hint="Phone *"
+                    android:maxLines="1"
+                    android:drawablePadding="@dimen/A10"
+                    android:drawableLeft="@drawable/ic_baseline_phone_android"
+                    android:inputType="textPassword"
+                    android:layout_marginStart="@dimen/s20"
+                    android:layout_marginEnd="@dimen/s20"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextName"
+                    style="@style/editText"/>
+
+
+                <TextView
+                    android:id="@+id/textViewPhone"
+                    style="@style/hintTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="Phone *"
+                    android:textColor="#757575"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextMobile"
+                    app:layout_constraintStart_toStartOf="@+id/editTextMobile"
+                    app:layout_constraintTop_toTopOf="@+id/editTextMobile" />
+
+
+
+                <EditText
                     android:id="@+id/editTextPassword"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/s30"
@@ -105,7 +169,7 @@
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_Mobile"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextMobile"
                     style="@style/editText"/>
 
 
@@ -166,7 +230,7 @@
                         android:layout_weight="1"
                         android:background="@color/white"
                         android:gravity="center"
-                        android:text="Forget Password ?"
+                        android:text="Login"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:visibility="visible"
@@ -185,7 +249,7 @@
                         android:layout_marginEnd="30dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Log In"
+                        android:text="Register"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -214,7 +278,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:layout_marginLeft="@dimen/A10"
                             android:background="@color/colorBorder"/>
 
@@ -224,34 +288,16 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:textColor="@color/black"
-                            android:text="New To Login?"/>
+                            android:text="New To Register?"/>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:layout_marginRight="@dimen/A10"
                             android:background="@color/colorBorder"/>
 
                     </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/btn_CreateAccount"
-                        android:background="@drawable/button_border"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="40sp"
-                        android:layout_marginEnd="40sp"
-                        android:gravity="center"
-                        android:visibility="visible"
-                        android:text="Create Your Account"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="@dimen/s20"
-                        android:layout_marginBottom="@dimen/s20"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/llLogin" />
 
 
                 </LinearLayout>
@@ -261,6 +307,5 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
 
 </ScrollView>
