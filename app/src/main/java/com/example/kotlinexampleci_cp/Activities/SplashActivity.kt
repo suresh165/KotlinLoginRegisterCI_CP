@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler().postDelayed(Runnable {
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            startActivity(Intent(this@SplashActivity,DashboardActivity::class.java))
         },100)
     }
 }

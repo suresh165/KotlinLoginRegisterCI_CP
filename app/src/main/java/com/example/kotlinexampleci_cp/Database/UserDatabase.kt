@@ -4,21 +4,22 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-@Database(entities = [UserModel::class], version = 1)
-abstract class UserDatabase :RoomDatabase() {
-    abstract fun useDao ():UserDao
 
-    companion object{
+@Database(entities = [UserModel::class], version = 1)
+abstract class UserDatabase : RoomDatabase() {
+    abstract fun userDao(): UserDao
+
+    companion object {
         private var INSTANCE: UserDatabase? = null
-        fun getUserDatabase(context: Context): UserDatabase {
+        fun getDatabase(context: Context): UserDatabase {
             if (INSTANCE == null) {
                 synchronized(this) {
                     INSTANCE = Room.databaseBuilder(
                         context,
                         UserDatabase::class.java,
-                        "user_database"
+                        "quote_database"
                     )
-                       // .createFromAsset("quotes.db")
+                        .createFromAsset("quotes.db")
                         .build()
                 }
             }

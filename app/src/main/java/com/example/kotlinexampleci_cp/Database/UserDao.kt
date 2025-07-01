@@ -7,9 +7,10 @@ import androidx.room.Query
 
 @Dao
 interface UserDao {
-    @Query("SELECT * from users")
-    fun getUser():LiveData<List<UserModel>>
-    //insertUser
+
+    @Query("SELECT * FROM user_table")
+    fun getAllUser():LiveData<List<UserModel>>
+
     @Insert
-    suspend fun insertUser(userModel: UserModel):Long
+    suspend fun insertUser(userModel: UserModel)
 }
